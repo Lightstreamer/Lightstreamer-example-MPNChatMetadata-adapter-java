@@ -29,6 +29,7 @@ The Data Adapter functionalities are absolved by the `ChatDataAdapter`, a full i
 This Adapter Set is configured and will be referenced by the clients as `CHAT`.
 
 The `adapters.xml` file for the Basic Chat Demo, should look like:
+
 ```xml
 <?xml version="1.0"?>
 
