@@ -127,10 +127,10 @@ The Mobile Push Notifications (MPN) module of Lightstreamer is not enabled by de
 
 The MPN module currently supports two MPN providers:
 
-* Apple's APNs for iOS
-* Google's FCM for Android
+* Apple&trade; APNs for iOS, macOS, tvOS, watchOS and Safari
+* Google&trade; FCM for Android, Chrome and Firefox
 
-Depending on the target operating system of your app, you may need to configure the `apple_notifier_conf.xml` file under `conf/mpn/apple`, `google_notifier_conf.xml` under `conf/mpn/google`, or both. The Chat demo with MPN is currently available for Apple platforms only.
+Currently the MPN Basic Chat Demo only supports the iOS Client, hence you only to configure the `apple_notifier_conf.xml` file under `conf/mpn/apple`. For an example of configuration of the MPN module for Google FCM, refer to the MPN Stock-List Demos and in particular the [Lightstreamer - MPN Stock-List Demo Metadata - Java Adapter](https://github.com/Lightstreamer/Lightstreamer-example-MPNStockListMetadata-adapter-java).
 
 #### Configuring the APNs Provider
 
@@ -153,26 +153,6 @@ Once you have the required material, add the following segment to the `apple_not
 ```
 
 Replace `your.app.id`, `your_client_certificate.p12` and `your certificate password` with the corresponding informations. The certificate file must be located in the same folder of `apple_notifier_conf.xml`, unless an absolute path is specified. The `<service_level>` tag must be set accordingly to your client certificate type: `development` (sandbox) or `production`. For more informations on the meaning of these tags please consult the `apple_notifier_conf.xml` itself or the *Mobile Push Notifications* section of the *General Concepts* document (available under `DOCS-SDKs` in your Lightstreamer Server installation).
-
-#### Configuring the FCM Provider
-
-For the FCM provider, you need the following material:
-
-* the *FCM sender ID* of your project;
-* the *API key* of your project.
-
-All this may be both obtained from the [Google Developers Console](https://console.developers.google.com/project). Follow [this guide](https://firebase.google.com/docs/cloud-messaging/server) for informations on how to configure your project appropriately to use FCM services.
-
-Once you have the required material, add the following segment to the `google_notifier_conf.xml` file:
-
-```xml
-   <app packageName="com.lightstreamer.demo.android.fcm">
-      <service_level>production</service_level>
-      <api_key>your-API-key</api_key>
-   </app>
-```
-
-Replace `your-API-key` with the corresponding information. You will need the GMC sender ID later. For more informations on the meaning of these tags please consult the `google_notifier_conf.xml` itself or the *Mobile Push Notifications* section of the *General Concepts* document (available under `DOCS-SDKs` in your Lightstreamer Server installation).
 
 ### Configuring the MPN Database
 
@@ -200,9 +180,7 @@ You may download the source code for the Chat Demo iOS Client here:
 
 * [Lightstreamer - Chat Demo - iOS Client - Swift](https://github.com/Lightstreamer/Lightstreamer-example-Chat-client-ios-swift)
 
-The project must be modified in order to work with your app ID and certificate and to point to your Lightstreamer Server.
-
-For the iOS Client:
+The project must be modified in order to work with your app ID and certificate and to point to your Lightstreamer Server:
 
 * your app ID must be set as the *Bundle Identifier* of the project (in Xcode, it may be found in the General tab of the project);
 * the IP address of your Lightstreamer Server must be set in the `SERVER_URL` constant in the `SwiftChat/ViewController.swift` file.
@@ -214,7 +192,7 @@ Also, remember to install an appropriate *provisioning profile* for the app, ena
 Done all this, the installation is finished and ready to be tested:
 
 * Launch the Lightstreamer Server.
-* Launch the iOS Client on your device or emulator (remember the iOS Simulator does not support push notifications).
+* Launch the iOS Client on your device (remember the iOS Simulator does not support push notifications).
 * Accept push notifications.
 
 If everything is correct, as soon as someone writes on the chat, you will receive a push notification within. You may try for yourself running the app on both the emulator and a device.
