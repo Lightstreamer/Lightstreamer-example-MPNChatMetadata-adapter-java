@@ -62,7 +62,7 @@ public class MPNChatMetadataAdapter extends LiteralBasedProvider {
     private Logger logger;
 
     /**
-     * Keeps the client context informations supplied by Lightstreamer on the
+     * Keeps the client context information supplied by Lightstreamer on the
      * new session notifications.
      * Session information is needed to uniquely identify each client.
      */
@@ -170,7 +170,7 @@ public class MPNChatMetadataAdapter extends LiteralBasedProvider {
         // The session must exist to be closed
         assert(sessions.containsKey(session));
 
-        // We have to remove session informations from the session HashMap
+        // We have to remove session information from the session HashMap
         // and from the pairs "Set"
 
         Map<String,String> sessionInfo = sessions.get(session);
