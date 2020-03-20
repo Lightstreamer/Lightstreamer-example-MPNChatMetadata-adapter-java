@@ -152,7 +152,7 @@ Once you have the required material, add the following segment to the `apple_not
    </app>
 ```
 
-Replace `your.app.id`, `your_client_certificate.p12` and `your certificate password` with the corresponding informations. The certificate file must be located in the same folder of `apple_notifier_conf.xml`, unless an absolute path is specified. The `<service_level>` tag must be set accordingly to your client certificate type: `development` (sandbox) or `production`. For more informations on the meaning of these tags please consult the `apple_notifier_conf.xml` itself or the *Mobile Push Notifications* section of the *General Concepts* document (available under `DOCS-SDKs` in your Lightstreamer Server installation).
+Replace `your.app.id`, `your_client_certificate.p12` and `your certificate password` with the corresponding information. The certificate file must be located in the same folder of `apple_notifier_conf.xml`, unless an absolute path is specified. The `<service_level>` tag must be set accordingly to your client certificate type: `development` (sandbox) or `production`. For more information on the meaning of these tags please consult the `apple_notifier_conf.xml` itself or the *Mobile Push Notifications* section of the *General Concepts* document (available under `DOCS-SDKs` in your Lightstreamer Server installation).
 
 ### Configuring the MPN Database
 
