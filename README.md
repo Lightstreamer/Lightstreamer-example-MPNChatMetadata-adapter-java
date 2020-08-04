@@ -94,7 +94,7 @@ The `adapters.xml` file for the Basic Chat Demo, should look like:
 <i>NOTE: not all configuration options of an Adapter Set are exposed by the file suggested above.
 You can easily expand your configurations using the generic template, see the [Java In-Process Adapter Interface Project](https://github.com/Lightstreamer/Lightstreamer-lib-adapter-java-inprocess#configuration) for details.</i>
 
-Please refer to the *General Concepts* document (available under `DOCS-SDKs` in your Lightstreamer Server installation) for more details about Lightstreamer Adapters.
+Please refer to the [*General Concepts* document](https://lightstreamer.com/docs/ls-server/latest/General%20Concepts.pdf) for more details about Lightstreamer Adapters.
 
 ## Install
 
