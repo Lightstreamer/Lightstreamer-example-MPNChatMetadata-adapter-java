@@ -20,8 +20,8 @@ import java.io.File;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.xml.DOMConfigurator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.lightstreamer.adapters.metadata.LiteralBasedProvider;
 import com.lightstreamer.interfaces.metadata.CreditsException;
@@ -91,6 +91,7 @@ public class MPNChatMetadataAdapter extends LiteralBasedProvider {
         //Call super's init method to handle basic Metadata Adapter features
         super.init(params,configDir);
 
+        /*
         String logConfig = (String) params.get("log_config");
         if (logConfig != null) {
             File logConfigFile = new File(configDir, logConfig);
@@ -100,8 +101,8 @@ public class MPNChatMetadataAdapter extends LiteralBasedProvider {
             } else {
                 DOMConfigurator.configure(logConfigFile.getAbsolutePath());
             }
-        }
-        logger = Logger.getLogger("LS_demos_Logger.Chat");
+        }*/
+        logger = LogManager.getLogger("LS_demos_Logger.Chat");
 
         // Read the Adapter Set name, which is supplied by the Server as a parameter
         this.adapterSetId = (String) params.get("adapters_conf.id");
