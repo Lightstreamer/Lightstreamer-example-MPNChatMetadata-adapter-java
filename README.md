@@ -16,7 +16,7 @@ The MPN Chat Metadata Adapter is comprised of one Java class.
 
 #### MPNChatMetadataAdapter
 
-The Metadata Adapter inherits from the reusable [LiteralBasedProvider](https://github.com/Lightstreamer/Lightstreamer-example-ReusableMetadata-adapter-java) and just adds a simple support for message submission. It should not be used as a reference for a real case of client-originated message handling, as no guaranteed delivery and no clustering support is shown.
+The Metadata Adapter inherits from the reusable [LiteralBasedProvider](https://github.com/Lightstreamer/Lightstreamer-lib-adapter-java-inprocess#literalbasedprovider-metadata-adapter) and just adds a simple support for message submission. It should not be used as a reference for a real case of client-originated message handling, as no guaranteed delivery and no clustering support is shown.
 
 In addition the code shows a few best practices to ensure safety of Mobile Push Notifications (MPN) activity. See the source code comments for further details.
 
@@ -211,7 +211,7 @@ Assuming Maven is installed and available in your path you can build the demo by
 ### Related Projects
 
 * [Lightstreamer - Basic Chat Demo - Node.js Adapter](https://github.com/Lightstreamer/Lightstreamer-example-Chat-adapter-node)
-* [Lightstreamer - Reusable Metadata Adapters - Java Adapter](https://github.com/Lightstreamer/Lightstreamer-example-ReusableMetadata-adapter-java)
+* [LiteralBasedProvider Metadata Adapter](https://github.com/Lightstreamer/Lightstreamer-lib-adapter-java-inprocess#literalbasedprovider-metadata-adapter)
 * [Lightstreamer - Basic Messenger Demo - Java Adapter](https://github.com/Lightstreamer/Lightstreamer-example-Messenger-adapter-java)
 * [Lightstreamer - Basic Messenger Demo - HTML Client](https://github.com/Lightstreamer/Lightstreamer-example-Messenger-client-javascript)
 
