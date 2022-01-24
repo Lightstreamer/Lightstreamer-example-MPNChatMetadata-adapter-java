@@ -210,13 +210,7 @@ public class MPNChatMetadataAdapter extends LiteralBasedProvider {
             throw new NotificationException("Unexpected error on item names");
         }
         
-        String[] itemNames;
-        try {
-            itemNames= getItems(user, sessionID, table.getId());
-
-        } catch (ItemsException e) {
-            throw new NotificationException("Unexpected error on item names");
-        }
+        String[] itemNames = table.getSubscribedItems();
         
         if ((itemNames.length != 1) ||(!itemNames[0].equals(ITEM_NAME)))
             throw new CreditsException(-102, "Invalid item argument for push notifications");
