@@ -16,7 +16,7 @@ The MPN Chat Metadata Adapter is comprised of one Java class.
 
 #### MPNChatMetadataAdapter
 
-The Metadata Adapter inherits from the reusable [LiteralBasedProvider](https://github.com/Lightstreamer/Lightstreamer-lib-adapter-java-inprocess#literalbasedprovider-metadata-adapter) and just adds a simple support for message submission. It should not be used as a reference for a real case of client-originated message handling, as no guaranteed delivery and no clustering support is shown.
+The Metadata Adapter inherits from the reusable [LiteralBasedProvider](https://github.com/Lightstreamer/Lightstreamer-lib-adapter-java-inprocess/tree/v7.4.1#literalbasedprovider-metadata-adapter) and just adds a simple support for message submission. It should not be used as a reference for a real case of client-originated message handling, as no guaranteed delivery and no clustering support is shown.
 
 In addition the code shows a few best practices to ensure safety of Mobile Push Notifications (MPN) activity. See the source code comments for further details.
 
@@ -80,9 +80,9 @@ The `adapters.xml` file for the Basic Chat Demo, should look like:
 ```
 
 <i>NOTE: not all configuration options of an Adapter Set are exposed by the file suggested above.
-You can easily expand your configurations using the generic template, see the [Java In-Process Adapter Interface Project](https://github.com/Lightstreamer/Lightstreamer-lib-adapter-java-inprocess#configuration) for details.</i>
+You can easily expand your configurations using the generic template, see the [Java In-Process Adapter Interface Project](https://github.com/Lightstreamer/Lightstreamer-lib-adapter-java-inprocess/tree/v7.4.1#configuration) for details.</i>
 
-Please refer to the [*General Concepts* document](https://lightstreamer.com/docs/ls-server/latest/General%20Concepts.pdf) for more details about Lightstreamer Adapters.
+Please refer to the [*General Concepts* document](https://lightstreamer.com/docs/ls-server/latest_7_3/General%20Concepts.pdf) for more details about Lightstreamer Adapters.
 
 ## Install
 
@@ -93,7 +93,7 @@ If you want to install a version of the *Chat Demo* in your local Lightstreamer 
 
 ### Installing the Adapter
 
-* Get the `deploy.zip` file of the [Metadata Adapter latest release](https://github.com/Lightstreamer/Lightstreamer-example-MPNChatMetadata-adapter-java/releases), unzip it, and copy the `Chat` folder into the `adapters` folder of your Lightstreamer Server installation.
+* Get the `deploy.zip` file of the [Metadata Adapter "Release for Lightstreamer 7.3" release](https://github.com/Lightstreamer/Lightstreamer-example-MPNChatMetadata-adapter-java/releases), unzip it, and copy the `Chat` folder into the `adapters` folder of your Lightstreamer Server installation.
 * [Optional] Customize logging settings in log4j configuration file `Chat/classes/log4j2.xml`.
 
 ### Enabling the MPN Module
@@ -133,7 +133,7 @@ Once you have the required material, add the following segment to the `apple_not
    </app>
 ```
 
-Replace `your.app.id`, `your_client_certificate.p12` and `your certificate password` with the corresponding information. The certificate file must be located in the same folder of `apple_notifier_conf.xml`, unless an absolute path is specified. The `<service_level>` tag must be set accordingly to your client certificate type: `development` (sandbox) or `production`. For more information on the meaning of these tags please consult the `apple_notifier_conf.xml` itself or the *Mobile Push Notifications* section of the [*General Concepts* document](https://lightstreamer.com/docs/ls-server/latest/General%20Concepts.pdf).
+Replace `your.app.id`, `your_client_certificate.p12` and `your certificate password` with the corresponding information. The certificate file must be located in the same folder of `apple_notifier_conf.xml`, unless an absolute path is specified. The `<service_level>` tag must be set accordingly to your client certificate type: `development` (sandbox) or `production`. For more information on the meaning of these tags please consult the `apple_notifier_conf.xml` itself or the *Mobile Push Notifications* section of the [*General Concepts* document](https://lightstreamer.com/docs/ls-server/latest_7_3/General%20Concepts.pdf).
 
 ### Configuring the MPN Database
 
@@ -217,5 +217,5 @@ Assuming Maven is installed and available in your path you can build the demo by
 
 ## Lightstreamer Compatibility Notes
 
-- Compatible with Lightstreamer SDK for Java Adapters Since 7.3
+- Compatible with Lightstreamer SDK for Java In-Process Adapters version 7.3 to 7.4.
 - For an example compatible with Lightstreamer SDK for Java Adapters version 6.x, please refer to the [non-MPN version of the Chat Data and Metadata Adapters](https://github.com/Lightstreamer/Lightstreamer-example-Chat-adapter-java).
