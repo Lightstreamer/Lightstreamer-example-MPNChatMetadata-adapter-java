@@ -182,7 +182,7 @@ In case of any problem, first double check all the steps above, then check for a
 
 ## Build
 
-To build your own version of `example-MPNChatMetadata-adapter-java-0.0.1-SNAPSHOT.jar` instead of using the one provided in the `deploy.zip` file from the [Install](https://github.com/Lightstreamer/Lightstreamer-example-MPNChatMetadata-adapter-java#install) section above, you have two options:
+To build your own version of `example-MPNChatMetadata-adapter-java-x.y.z-SNAPSHOT.jar` instead of using the one provided in the `deploy.zip` file from the [Install](#install) section above, you have two options:
 either use [Maven](https://maven.apache.org/) (or other build tools) to take care of dependencies and building (recommended) or gather the necessary jars yourself and build it manually.
 As a precondition for compiling you need to download the [Chat Data Adapter](https://github.com/Lightstreamer/Lightstreamer-example-Chat-adapter-java/blob/master/src/main/java/com/lightstreamer/src_chat/chat_demo/adapters/ChatDataAdapter.java) class and copy the source into `src\main\java\com\lightstreamer\chat_demo\adapters` folder of this project.
 
