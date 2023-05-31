@@ -18,6 +18,8 @@ package com.lightstreamer.examples.chat_demo.adapters;
 
 import java.io.File;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionStage;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.apache.logging.log4j.LogManager;
@@ -127,8 +129,10 @@ public class MPNChatMetadataAdapter extends LiteralBasedProvider {
      * The message encodes a chat message from the client.
      */
     @Override
-    public void notifyUserMessage(String user, String session, String message)
+    public CompletionStage<String> notifyUserMessage(String user, String session, String message)
         throws NotificationException, CreditsException {
+
+        // we won't introduce blocking operations, hence we can proceed inline
 
         if (message == null) {
             logger.warn("Null message received");
@@ -141,6 +145,8 @@ public class MPNChatMetadataAdapter extends LiteralBasedProvider {
 
         this.loadChatFeed();
         this.handleChatMessage(pieces,message,session);
+
+        return CompletableFuture.completedStage(null);
     }
 
     
