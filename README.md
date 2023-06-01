@@ -39,7 +39,7 @@ The `adapters.xml` file for the Basic Chat Demo, should look like:
 
     <metadata_provider>
 
-        <adapter_class>chat_demo.adapters.MPNChatMetadataAdapter</adapter_class>
+        <adapter_class>com.lightstreamer.examples.chat_demo.adapters.MPNChatMetadataAdapter</adapter_class>
 
         <!-- Optional, managed by the inherited LiteralBasedProvider.
              See LiteralBasedProvider javadoc. -->
@@ -62,7 +62,7 @@ The `adapters.xml` file for the Basic Chat Demo, should look like:
 
     <data_provider name="CHAT_ROOM">
 
-        <adapter_class>chat_demo.adapters.ChatDataAdapter</adapter_class>
+        <adapter_class>com.lightstreamer.examples.chat_demo.adapters.ChatDataAdapter</adapter_class>
 
         <!-- Optional for ChatDataAdapter.
              Configuration flag for periodic flush of the snapshot.
@@ -184,7 +184,7 @@ In case of any problem, first double check all the steps above, then check for a
 
 To build your own version of `example-MPNChatMetadata-adapter-java-x.y.z-SNAPSHOT.jar` instead of using the one provided in the `deploy.zip` file from the [Install](#install) section above, you have two options:
 either use [Maven](https://maven.apache.org/) (or other build tools) to take care of dependencies and building (recommended) or gather the necessary jars yourself and build it manually.
-As a precondition for compiling you need to download the [Chat Data Adapter](https://github.com/Lightstreamer/Lightstreamer-example-Chat-adapter-java/blob/master/src/main/java/com/lightstreamer/src_chat/chat_demo/adapters/ChatDataAdapter.java) class and copy the source into `src\main\java\com\lightstreamer\chat_demo\adapters` folder of this project.
+As a precondition for compiling you need to download the [Chat Data Adapter](https://github.com/Lightstreamer/Lightstreamer-example-Chat-adapter-java/blob/master/src/main/java/com/lightstreamer/examples/chat_demo/adapters/ChatDataAdapter.java) class and copy the source into `src\main\java\com\lightstreamer\examples\chat_demo\adapters` folder of this project.
 
 
 For the sake of simplicity only the Maven case is detailed here.
