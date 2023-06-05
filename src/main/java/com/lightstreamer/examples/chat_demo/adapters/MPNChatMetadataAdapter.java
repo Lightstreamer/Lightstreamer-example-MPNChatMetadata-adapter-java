@@ -146,7 +146,7 @@ public class MPNChatMetadataAdapter extends LiteralBasedProvider {
         this.loadChatFeed();
         this.handleChatMessage(pieces,message,session);
 
-        return CompletableFuture.completedStage(null);
+        return CompletableFuture.completedFuture(null);
     }
 
     
