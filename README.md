@@ -16,7 +16,7 @@ The MPN Chat Metadata Adapter is comprised of one Java class.
 
 #### MPNChatMetadataAdapter
 
-The Metadata Adapter inherits from the reusable [LiteralBasedProvider](https://github.com/Lightstreamer/Lightstreamer-lib-adapter-java-inprocess#literalbasedprovider-metadata-adapter) and just adds a simple support for message submission. It should not be used as a reference for a real case of client-originated message handling, as no guaranteed delivery and no clustering support is shown.
+The Metadata Adapter implements `MetadataAdapter` directly, with no authentication logic (suitable for demos only), and just adds a simple support for message submission. It should not be used as a reference for a real case of client-originated message handling, as no guaranteed delivery and no clustering support is shown.
 
 In addition the code shows a few best practices to ensure safety of Mobile Push Notifications (MPN) activity. See the source code comments for further details.
 
@@ -41,21 +41,8 @@ The `adapters.xml` file for the Basic Chat Demo, should look like:
 
         <adapter_class>com.lightstreamer.examples.chat_demo.adapters.MPNChatMetadataAdapter</adapter_class>
 
-        <!-- Optional, managed by the inherited LiteralBasedProvider.
-             See LiteralBasedProvider javadoc. -->
-        <!--
-        <param name="max_bandwidth">40</param>
-        <param name="max_frequency">3</param>
-        <param name="buffer_size">30</param>
-        <param name="prefilter_frequency">5</param>
-        <param name="allowed_users">user123,user456</param>
-        -->
-        <param name="distinct_snapshot_length">30</param>
-
-        <!-- Optional, managed by the inherited LiteralBasedProvider.
-             See LiteralBasedProvider javadoc. -->
-        <param name="item_family_1">chat_room.*</param>
-        <param name="modes_for_item_family_1">DISTINCT</param>
+        <!-- Ensure compatibility with old versions of the demo Clients. -->
+        <support_LiteralBased_subscriptions>Y</support_LiteralBased_subscriptions>
 
     </metadata_provider>
 
@@ -94,6 +81,8 @@ If you want to install a version of the *Chat Demo* in your local Lightstreamer 
 ### Installing the Adapter
 
 * Get the `deploy.zip` file of the [Metadata Adapter latest release](https://github.com/Lightstreamer/Lightstreamer-example-MPNChatMetadata-adapter-java/releases), unzip it, and copy the `Chat` folder into the `adapters` folder of your Lightstreamer Server installation.
+
+This deployment also includes a suitable version of the Stock-List Demo Data Adapter.
 * [Optional] Customize logging settings in log4j configuration file `Chat/classes/log4j2.xml`.
 
 ### Enabling the MPN Module
@@ -182,7 +171,7 @@ In case of any problem, first double check all the steps above, then check for a
 
 ## Build
 
-To build your own version of `example-MPNChatMetadata-adapter-java-x.y.z-SNAPSHOT.jar` instead of using the one provided in the `deploy.zip` file from the [Install](#install) section above, you have two options:
+To build your own version of `example-MPNChatMetadata-adapter-java-x.y.z.jar` instead of using the one provided in the `deploy.zip` file from the [Install](#install) section above, you have two options:
 either use [Maven](https://maven.apache.org/) (or other build tools) to take care of dependencies and building (recommended) or gather the necessary jars yourself and build it manually.
 As a precondition for compiling you need to download the [Chat Data Adapter](https://github.com/Lightstreamer/Lightstreamer-example-Chat-adapter-java/blob/master/src/main/java/com/lightstreamer/examples/chat_demo/adapters/ChatDataAdapter.java) class and copy the source into `src\main\java\com\lightstreamer\examples\chat_demo\adapters` folder of this project.
 
@@ -211,12 +200,12 @@ Assuming Maven is installed and available in your path you can build the demo by
 ### Related Projects
 
 * [Lightstreamer - Basic Chat Demo - Node.js Adapter](https://github.com/Lightstreamer/Lightstreamer-example-Chat-adapter-node)
-* [LiteralBasedProvider Metadata Adapter](https://github.com/Lightstreamer/Lightstreamer-lib-adapter-java-inprocess#literalbasedprovider-metadata-adapter)
 * [Lightstreamer - Basic Messenger Demo - Java Adapter](https://github.com/Lightstreamer/Lightstreamer-example-Messenger-adapter-java)
 * [Lightstreamer - Basic Messenger Demo - HTML Client](https://github.com/Lightstreamer/Lightstreamer-example-Messenger-client-javascript)
 
 ## Lightstreamer Compatibility Notes
 
-- Compatible with Lightstreamer SDK for Java Adapters Since version 8.0
+- Compatible with Lightstreamer SDK for Java In-Process Adapters since version 9.0.
+- For a version of this example compatible with Lightstreamer SDK for Java In-Process Adapters versions 8.x, please refer to [this tag](https://github.com/Lightstreamer/Lightstreamer-example-MPNChatMetadata-adapter-java/tree/XXXXXXXXXXXXXXXXXXXXX).
 - For an example compatible with Lightstreamer SDK for Java Adapters versions 7.3 to 7.4, please refer to [this tag](https://github.com/Lightstreamer/Lightstreamer-example-MPNChatMetadata-adapter-java/releases/tag/last_for_interface_7.4.x).
 - For an example compatible with Lightstreamer SDK for Java Adapters version 6.x, please refer to the [non-MPN version of the Chat Data and Metadata Adapters](https://github.com/Lightstreamer/Lightstreamer-example-Chat-adapter-java).
